@@ -1,0 +1,24 @@
+import { useState } from 'react'
+
+function Child1({ name, time, add }) {
+   // [state명, state값을 바꿀 함수] =useState('state초기값')
+   // text = 'hello'
+   // setText(변경할 값)
+   const [text, setText] = useState('hello')
+
+   const result = add(1, 2)
+   return (
+      <div>
+         <p>{text}</p>
+         {/* state를 사용하면 컴포넌트 재렌더링이 일어난다 */}
+         <button onClick={() => setText('안녕')}>변경</button>
+
+         <p>{name}</p>
+         <p>{time}</p>
+         <p>{result}</p>
+         <button onClick={() => add(1, 2)}>dd</button>
+      </div>
+   )
+}
+
+export default Child1
